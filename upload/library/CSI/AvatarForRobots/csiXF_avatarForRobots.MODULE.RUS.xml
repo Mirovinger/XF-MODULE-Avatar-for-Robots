@@ -30,9 +30,9 @@
     <interface_groups/>
   </permissions>
   <phrases>
-    <phrase title="option_csiXF_avForRob_onAvRob" version_id="3" version_string="1.0.2"><![CDATA[Включить аватары роботов?]]></phrase>
-    <phrase title="option_csiXF_avForRob_onAvRob_explain" version_id="3" version_string="1.0.2"><![CDATA[Включение / отключение функции индивидуальных аватар для роботов.]]></phrase>
-    <phrase title="option_group_csiXF_avForRob" version_id="2" version_string="1.0.1"><![CDATA[(CSI/XF/MODULE) Аватары для роботов]]></phrase>
+    <phrase title="option_csiXF_avForRob_onAvRob" version_id="1" version_string="1.0.0"><![CDATA[Включить аватары роботов?]]></phrase>
+    <phrase title="option_csiXF_avForRob_onAvRob_explain" version_id="1" version_string="1.0.0"><![CDATA[Включение / отключение функции индивидуальных аватар для роботов.]]></phrase>
+    <phrase title="option_group_csiXF_avForRob" version_id="1" version_string="1.0.0"><![CDATA[(CSI/XF/MODULE) Аватары для роботов]]></phrase>
     <phrase title="option_group_csiXF_avForRob_description" version_id="1" version_string="1.0.0"><![CDATA[Индивидуальные аватары для роботов.]]></phrase>
   </phrases>
   <route_prefixes/>
