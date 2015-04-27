@@ -4,7 +4,7 @@
   Contacts: http://cyberspace.industries/
   License: LICENSE.ENG.txt / LICENSE.RUS.txt
 -->
-<addon addon_id="csiXF_avatarForRobots" title="(CSI/XF/MODULE) Аватары для роботов" version_string="1.0.0" version_id="1" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+<addon addon_id="csiXF_avForRob" title="(CSI/XF/MODULE) Аватары для роботов" version_string="1.0.0" version_id="1" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
   <admin_navigation/>
   <admin_permissions/>
   <admin_style_properties/>
@@ -15,17 +15,30 @@
   <cron/>
   <email_templates/>
   <email_template_modifications/>
-  <optiongroups/>
+  <optiongroups>
+    <group group_id="csiXF_avForRob" display_order="99999999" debug_only="0"/>
+    <option option_id="csiXF_avForRob_onAvRob" edit_format="onoff" data_type="boolean" can_backup="1">
+      <default_value>1</default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="csiXF_avForRob" display_order="1"/>
+    </option>
+  </optiongroups>
   <permissions>
     <permission_groups/>
     <permissions/>
     <interface_groups/>
   </permissions>
-  <phrases/>
+  <phrases>
+    <phrase title="option_csiXF_avForRob_onAvRob" version_id="3" version_string="1.0.2"><![CDATA[Включить аватары роботов?]]></phrase>
+    <phrase title="option_csiXF_avForRob_onAvRob_explain" version_id="3" version_string="1.0.2"><![CDATA[Включение / отключение функции индивидуальных аватар для роботов.]]></phrase>
+    <phrase title="option_group_csiXF_avForRob" version_id="2" version_string="1.0.1"><![CDATA[(CSI/XF/MODULE) Аватары для роботов]]></phrase>
+    <phrase title="option_group_csiXF_avForRob_description" version_id="1" version_string="1.0.0"><![CDATA[Индивидуальные аватары для роботов.]]></phrase>
+  </phrases>
   <route_prefixes/>
   <style_properties/>
   <templates>
-    <template title="csiXF_avatarForRobots_mli" version_id="1" version_string="1.0.0"><![CDATA[<xen:if is="{$user.robotInfo.title}">
+    <template title="csiXF_avForRob_mli" version_id="1" version_string="1.0.0"><![CDATA[<xen:if is="{$user.robotInfo.title} AND {$xenOptions.csiXF_avForRob_onAvRob}">
   <a class="avatar Avs" data-avatarhtml="true">
     <span class="img s" style="background-image: url('styles/robots/avatars/{$user.robotInfo.title}.png')"></span>
   </a>
@@ -34,9 +47,9 @@
 </xen:if>]]></template>
   </templates>
   <public_template_modifications>
-    <modification template="member_list_item" modification_key="csiXF_avatarForRobots_mli" description="Модификация шаблона &quot;member_list_item&quot;" execution_order="99999999" enabled="1" action="str_replace">
+    <modification template="member_list_item" modification_key="csiXF_avForRob_mli" description="Модификация шаблона &quot;member_list_item&quot;" execution_order="99999999" enabled="1" action="str_replace">
       <find><![CDATA[<xen:avatar user="$user" size="s" class="{xen:if $noOverlay, 'NoOverlay'}" />]]></find>
-      <replace><![CDATA[<xen:include template="csiXF_avatarForRobots_mli" />]]></replace>
+      <replace><![CDATA[<xen:include template="csiXF_avForRob_mli" />]]></replace>
     </modification>
   </public_template_modifications>
   <bb_code_media_sites/>
