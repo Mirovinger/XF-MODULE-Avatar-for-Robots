@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright © 2015 CYBERSPACE Industries
+  Contacts: http://cyberspace.industries/
+  License: LICENSE.ENG.txt / LICENSE.RUS.txt
+-->
+<addon addon_id="csiXF_avatarForRobots" title="(CSI/XF/MODULE) Аватары для роботов" version_string="1.0.0" version_id="1" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners/>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups/>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases/>
+  <route_prefixes/>
+  <style_properties/>
+  <templates>
+    <template title="csiXF_avatarForRobots_mli" version_id="1" version_string="1.0.0"><![CDATA[<xen:if is="{$user.robotInfo.title}">
+  <a class="avatar Avs" data-avatarhtml="true">
+    <span class="img s" style="background-image: url('styles/robots/avatars/{$user.robotInfo.title}.png')"></span>
+  </a>
+<xen:else />
+  <xen:avatar user="$user" size="s" class="{xen:if $noOverlay, 'NoOverlay'}" />
+</xen:if>]]></template>
+  </templates>
+  <public_template_modifications>
+    <modification template="member_list_item" modification_key="csiXF_avatarForRobots_mli" description="Модификация шаблона &quot;member_list_item&quot;" execution_order="99999999" enabled="1" action="str_replace">
+      <find><![CDATA[<xen:avatar user="$user" size="s" class="{xen:if $noOverlay, 'NoOverlay'}" />]]></find>
+      <replace><![CDATA[<xen:include template="csiXF_avatarForRobots_mli" />]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
