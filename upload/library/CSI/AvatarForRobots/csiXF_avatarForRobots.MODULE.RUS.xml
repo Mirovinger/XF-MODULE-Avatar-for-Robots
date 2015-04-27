@@ -23,6 +23,12 @@
       <sub_options></sub_options>
       <relation group_id="csiXF_avForRob" display_order="1"/>
     </option>
+    <option option_id="csiXF_avForRob_dir" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value><![CDATA[styles/robots/avatars]]></default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="csiXF_avForRob" display_order="2"/>
+    </option>
   </optiongroups>
   <permissions>
     <permission_groups/>
@@ -32,6 +38,8 @@
   <phrases>
     <phrase title="option_csiXF_avForRob_onAvRob" version_id="1" version_string="1.0.0"><![CDATA[Включить аватары роботов?]]></phrase>
     <phrase title="option_csiXF_avForRob_onAvRob_explain" version_id="1" version_string="1.0.0"><![CDATA[Включение / отключение функции индивидуальных аватар для роботов.]]></phrase>
+    <phrase title="option_csiXF_avForRob_dir" version_id="1" version_string="1.0.0"><![CDATA[Директория изображений]]></phrase>
+    <phrase title="option_csiXF_avForRob_dir_explain" version_id="1" version_string="1.0.0"><![CDATA[Укажите директорию, в которой находятся аватары поисковых роботов.]]></phrase>
     <phrase title="option_group_csiXF_avForRob" version_id="1" version_string="1.0.0"><![CDATA[(CSI/XF/MODULE) Аватары для роботов]]></phrase>
     <phrase title="option_group_csiXF_avForRob_description" version_id="1" version_string="1.0.0"><![CDATA[Индивидуальные аватары для роботов.]]></phrase>
   </phrases>
@@ -40,7 +48,7 @@
   <templates>
     <template title="csiXF_avForRob_mli" version_id="1" version_string="1.0.0"><![CDATA[<xen:if is="{$user.robotInfo.title} AND {$xenOptions.csiXF_avForRob_onAvRob}">
   <a class="avatar Avs" data-avatarhtml="true">
-    <span class="img s" style="background-image: url('styles/robots/avatars/{$user.robotInfo.title}.png')"></span>
+    <span class="img s" style="background-image: url('{$xenOptions.csiXF_avForRob_dir}/{$user.robotInfo.title}.png')"></span>
   </a>
 <xen:else />
   <xen:avatar user="$user" size="s" class="{xen:if $noOverlay, 'NoOverlay'}" />
