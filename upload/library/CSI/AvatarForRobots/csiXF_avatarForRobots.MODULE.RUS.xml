@@ -4,7 +4,7 @@
   Contacts: http://cyberspace.industries/
   License: LICENSE.ENG.txt / LICENSE.RUS.txt
 -->
-<addon addon_id="csiXF_avForRob" title="(CSI/XF/MODULE) Аватары для роботов" version_string="1.0.0" version_id="1" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+<addon addon_id="csiXF_avForRobo" title="(CSI/XF/MODULE) Аватары для роботов" version_string="1.0.0" version_id="1" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
   <admin_navigation/>
   <admin_permissions/>
   <admin_style_properties/>
@@ -16,18 +16,18 @@
   <email_templates/>
   <email_template_modifications/>
   <optiongroups>
-    <group group_id="csiXF_avForRob" display_order="99999999" debug_only="0"/>
-    <option option_id="csiXF_avForRob_onAvRob" edit_format="onoff" data_type="boolean" can_backup="1">
+    <group group_id="csiXF_avForRobo" display_order="99999999" debug_only="0"/>
+    <option option_id="csiXF_avForRobo_onAvRobo" edit_format="onoff" data_type="boolean" can_backup="1">
       <default_value>1</default_value>
       <edit_format_params></edit_format_params>
       <sub_options></sub_options>
-      <relation group_id="csiXF_avForRob" display_order="1"/>
+      <relation group_id="csiXF_avForRobo" display_order="1"/>
     </option>
-    <option option_id="csiXF_avForRob_dir" edit_format="textbox" data_type="string" can_backup="1">
+    <option option_id="csiXF_avForRobo_dir" edit_format="textbox" data_type="string" can_backup="1">
       <default_value><![CDATA[styles/robots/avatars]]></default_value>
       <edit_format_params></edit_format_params>
       <sub_options></sub_options>
-      <relation group_id="csiXF_avForRob" display_order="2"/>
+      <relation group_id="csiXF_avForRobo" display_order="2"/>
     </option>
   </optiongroups>
   <permissions>
@@ -36,28 +36,28 @@
     <interface_groups/>
   </permissions>
   <phrases>
-    <phrase title="option_csiXF_avForRob_onAvRob" version_id="1" version_string="1.0.0"><![CDATA[Включить аватары роботов?]]></phrase>
-    <phrase title="option_csiXF_avForRob_onAvRob_explain" version_id="1" version_string="1.0.0"><![CDATA[Включение / отключение функции индивидуальных аватар для роботов.]]></phrase>
-    <phrase title="option_csiXF_avForRob_dir" version_id="1" version_string="1.0.0"><![CDATA[Директория изображений]]></phrase>
-    <phrase title="option_csiXF_avForRob_dir_explain" version_id="1" version_string="1.0.0"><![CDATA[Укажите директорию, в которой находятся аватары поисковых роботов.]]></phrase>
-    <phrase title="option_group_csiXF_avForRob" version_id="1" version_string="1.0.0"><![CDATA[(CSI/XF/MODULE) Аватары для роботов]]></phrase>
-    <phrase title="option_group_csiXF_avForRob_description" version_id="1" version_string="1.0.0"><![CDATA[Индивидуальные аватары для роботов.]]></phrase>
+    <phrase title="option_csiXF_avForRobo_onAvRobo" version_id="1" version_string="1.0.0"><![CDATA[Включить аватары роботов?]]></phrase>
+    <phrase title="option_csiXF_avForRobo_onAvRobo_explain" version_id="1" version_string="1.0.0"><![CDATA[Включение / отключение функции индивидуальных аватар для роботов.]]></phrase>
+    <phrase title="option_csiXF_avForRobo_dir" version_id="1" version_string="1.0.0"><![CDATA[Директория изображений]]></phrase>
+    <phrase title="option_csiXF_avForRobo_dir_explain" version_id="1" version_string="1.0.0"><![CDATA[Укажите директорию, в которой находятся аватары поисковых роботов.]]></phrase>
+    <phrase title="option_group_csiXF_avForRobo" version_id="1" version_string="1.0.0"><![CDATA[(CSI/XF/MODULE) Аватары для роботов]]></phrase>
+    <phrase title="option_group_csiXF_avForRobo_description" version_id="1" version_string="1.0.0"><![CDATA[Индивидуальные аватары для роботов.]]></phrase>
   </phrases>
   <route_prefixes/>
   <style_properties/>
   <templates>
-    <template title="csiXF_avForRob_mli" version_id="1" version_string="1.0.0"><![CDATA[<xen:if is="{$user.robotInfo.title} AND {$xenOptions.csiXF_avForRob_onAvRob}">
+    <template title="csiXF_avForRobo_mli" version_id="1" version_string="1.0.0"><![CDATA[<xen:if is="{$user.robotInfo.title} AND {$xenOptions.csiXF_avForRobo_onAvRobo}">
   <a class="avatar Avs" data-avatarhtml="true">
-    <span class="img s" style="background-image: url('{$xenOptions.csiXF_avForRob_dir}/{$user.robotInfo.title}.png')"></span>
+    <span class="img s" style="background-image: url('{$xenOptions.csiXF_avForRobo_dir}/{$user.robotInfo.title}.png')"></span>
   </a>
 <xen:else />
   <xen:avatar user="$user" size="s" class="{xen:if $noOverlay, 'NoOverlay'}" />
 </xen:if>]]></template>
   </templates>
   <public_template_modifications>
-    <modification template="member_list_item" modification_key="csiXF_avForRob_mli" description="Модификация шаблона &quot;member_list_item&quot;" execution_order="99999999" enabled="1" action="str_replace">
+    <modification template="member_list_item" modification_key="csiXF_avForRobo_mli" description="Модификация шаблона &quot;member_list_item&quot;" execution_order="99999999" enabled="1" action="str_replace">
       <find><![CDATA[<xen:avatar user="$user" size="s" class="{xen:if $noOverlay, 'NoOverlay'}" />]]></find>
-      <replace><![CDATA[<xen:include template="csiXF_avForRob_mli" />]]></replace>
+      <replace><![CDATA[<xen:include template="csiXF_avForRobo_mli" />]]></replace>
     </modification>
   </public_template_modifications>
   <bb_code_media_sites/>
