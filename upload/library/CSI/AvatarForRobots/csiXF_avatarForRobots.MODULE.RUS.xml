@@ -4,7 +4,7 @@
   Contacts: http://cyberspace.industries/
   License: LICENSE.ENG.txt / LICENSE.RUS.txt
 -->
-<addon addon_id="csiXF_avForRobo" title="(CSI/XF/MODULE) Аватары для роботов" version_string="1.0.0" version_id="1" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+<addon addon_id="csiXF_avForRobo" title="(CSI/XF/MODULE) Аватары для роботов" version_string="1.0.1" version_id="2" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
   <admin_navigation/>
   <admin_permissions/>
   <admin_style_properties/>
@@ -24,7 +24,7 @@
       <relation group_id="csiXF_avForRobo" display_order="1"/>
     </option>
     <option option_id="csiXF_avForRobo_dir" edit_format="textbox" data_type="string" can_backup="1">
-      <default_value><![CDATA[styles/robots/avatars]]></default_value>
+      <default_value><![CDATA[robots]]></default_value>
       <edit_format_params></edit_format_params>
       <sub_options></sub_options>
       <relation group_id="csiXF_avForRobo" display_order="2"/>
@@ -46,9 +46,9 @@
   <route_prefixes/>
   <style_properties/>
   <templates>
-    <template title="csiXF_avForRobo_mli" version_id="1" version_string="1.0.0"><![CDATA[<xen:if is="{$user.robotInfo.title} AND {$xenOptions.csiXF_avForRobo_onAvRobo}">
+    <template title="csiXF_avForRobo_mli" version_id="2" version_string="1.0.1"><![CDATA[<xen:if is="{$user.robotInfo.title} AND {$xenOptions.csiXF_avForRobo_onAvRobo}">
   <a class="avatar Avs" data-avatarhtml="true">
-    <span class="img s" style="background-image: url('{$xenOptions.csiXF_avForRobo_dir}/{$user.robotInfo.title}.png')"></span>
+    <span class="img s" style="background-image: url('{xen:property imagePath}/{$xenOptions.csiXF_avForRobo_dir}/{$user.robotInfo.title}.png')"></span>
   </a>
 <xen:else />
   <xen:avatar user="$user" size="s" class="{xen:if $noOverlay, 'NoOverlay'}" />
